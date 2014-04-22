@@ -1,0 +1,9 @@
+int main(){
+// this is a single line comment
+int i = 1; //integer
+/*
+this is a
+multiple lines comment
+*/
+float f = 1.0; //float number
+}
