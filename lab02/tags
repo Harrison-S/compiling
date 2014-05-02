@@ -1,0 +1,84 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARRAY	type.h	/^	enum {INT,FLOAT,ARRAY,STRUCTURE} kind;$/;"	e	enum:Type_::__anon1
+Args	syntax.y	/^Args	:	Exp	COMMA Args	{$$=addnode(3,"Args",$1,$2,$3);}$/;"	l
+CompSt	syntax.y	/^CompSt	:	LC DefList StmtList RC	{$$=addnode(4,"CompSt",$1,$2,$3,$4);}$/;"	l
+Dec	syntax.y	/^Dec		:	VarDec	{$$=addnode(1,"Dec",$1);}$/;"	l
+DecList	syntax.y	/^DecList	:	Dec	{$$=addnode(1,"DecList",$1);}$/;"	l
+Def	syntax.y	/^Def		:	Specifier DecList SEMI	{$$=addnode(3,"Def",$1,$2,$3);}$/;"	l
+DefList	syntax.y	/^DefList	:	Def DefList	{$$=addnode(2,"DefList",$1,$2);}$/;"	l
+Elem	type.h	/^typedef struct Elem_* Elem;$/;"	t	typeref:struct:Elem_
+Elem_	type.h	/^struct Elem_$/;"	s
+Exp	syntax.y	/^Exp		:	Exp ASSIGNOP Exp	{$$=addnode(3,"Exp",$1,$2,$3);}$/;"	l
+ExtDecList	build_table.c	/^Type ExtDecList(struct node *current,Type type)$/;"	f
+ExtDecList	syntax.y	/^ExtDecList	:	VarDec	{$$=addnode(1,"ExtDecList",$1);}$/;"	l
+ExtDef	build_table.c	/^void ExtDef(struct node *current)$/;"	f
+ExtDef	syntax.y	/^ExtDef		:	Specifier ExtDecList SEMI	{$$=addnode(3,"ExtDef",$1,$2,$3);}$/;"	l
+ExtDefList	syntax.y	/^ExtDefList	:	\/*empty*\/	{$$=NULL;}$/;"	l
+ExtDef_first	build_table.c	/^void ExtDef_first(struct node *current)$/;"	f
+FLOAT	type.h	/^	enum {INT,FLOAT,ARRAY,STRUCTURE} kind;$/;"	e	enum:Type_::__anon1
+FieldList	type.h	/^typedef struct FieldList_* FieldList;$/;"	t	typeref:struct:FieldList_
+FieldList_	type.h	/^struct FieldList_$/;"	s
+FunDec	syntax.y	/^FunDec	:	ID LP VarList RP	{$$=addnode(4,"FunDec",$1,$2,$3,$4);}$/;"	l
+Function	type.h	/^typedef struct Function_* Function;$/;"	t	typeref:struct:Function_
+Function_	type.h	/^struct Function_$/;"	s
+Headline	type.h	/^typedef struct Headline_* Headline;$/;"	t	typeref:struct:Headline_
+Headline_	type.h	/^struct Headline_$/;"	s
+INT	type.h	/^	enum {INT,FLOAT,ARRAY,STRUCTURE} kind;$/;"	e	enum:Type_::__anon1
+OptTag	syntax.y	/^OptTag		:	ID	{$$=addnode(1,"OptTag",$1);}$/;"	l
+ParamDec	syntax.y	/^ParamDec:	Specifier VarDec	{$$=addnode(2,"VarList",$1,$2);}$/;"	l
+Program	syntax.y	/^Program		:	ExtDefList	{$$=addnode(1,"Program",$1);root=$$;}	$/;"	l
+STRUCTURE	type.h	/^	enum {INT,FLOAT,ARRAY,STRUCTURE} kind;$/;"	e	enum:Type_::__anon1
+Specifier	build_table.c	/^Type Specifier(sturct node *current)$/;"	f
+Specifier	syntax.y	/^Specifier	:	TYPE	{$$=addnode(1,"Specifier",$1);}$/;"	l
+Stmt	syntax.y	/^Stmt	:	Exp SEMI	{$$=addnode(2,"Stmt",$1,$2);}$/;"	l
+StmtList	syntax.y	/^StmtList:	Stmt StmtList	{$$=addnode(2,"StmtList",$1,$2);}$/;"	l
+StructSpecifier	syntax.y	/^StructSpecifier	:	STRUCT OptTag LC DefList RC	{$$=addnode(5,"StructSpecifier",$1,$2,$3,$4,$5);}$/;"	l
+Tag	syntax.y	/^Tag			:	ID	{$$=addnode(1,"Tag",$1);}$/;"	l
+Type	type.h	/^typedef struct Type_* Type;$/;"	t	typeref:struct:Type_
+Type_	type.h	/^struct Type_$/;"	s
+VarDec	syntax.y	/^VarDec	:	ID	{$$=addnode(1,"VarDec",$1);}$/;"	l
+VarList	syntax.y	/^VarList	:	ParamDec COMMA VarList	{$$=addnode(3,"VarList",$1,$2,$3);}$/;"	l
+add_elem_v	table.c	/^void add_elem_v(Elem goingtoadd)$/;"	f
+array	type.h	/^		struct {Type elem;int size;}array;$/;"	m	union:Type_::__anon2	typeref:struct:Type_::__anon2::__anon3
+atof	table.c	/^float atof(const char *str)$/;"	f
+atoi	table.c	/^int atoi(const char *str)$/;"	f
+basic_f	type.h	/^		float basic_f;$/;"	m	union:Type_::__anon2
+basic_i	type.h	/^		int basic_i;$/;"	m	union:Type_::__anon2
+column	node.h	/^	int column;$/;"	m	struct:node
+content	node.h	/^	char content[256];$/;"	m	struct:node
+current	table.c	/^Headline current;$/;"	v
+downone	type.h	/^	Elem downone;$/;"	m	struct:Elem_
+elem	type.h	/^		struct {Type elem;int size;}array;$/;"	m	struct:Type_::__anon2::__anon3
+f_name	type.h	/^	char* f_name;$/;"	m	struct:Function_
+hash_pjw	table.c	/^unsigned int hash_pjw(char* name)$/;"	f
+head	table.c	/^Headline head=NULL;$/;"	v
+init	table.c	/^void init()$/;"	f
+kind	type.h	/^	enum {INT,FLOAT,ARRAY,STRUCTURE} kind;$/;"	m	struct:Type_	typeref:enum:Type_::__anon1
+lineno	node.h	/^	int lineno;$/;"	m	struct:node
+mlc	node.h	/^	struct node *mlc;$/;"	m	struct:node	typeref:struct:node::node
+name	type.h	/^	char *name;$/;"	m	struct:Elem_
+name	type.h	/^	char* name;\/\/ the name of field$/;"	m	struct:FieldList_
+next	type.h	/^	Type next;$/;"	m	struct:Type_
+next_p	type.h	/^	Type next_p;$/;"	m	struct:Function_
+nextone	type.h	/^	Elem nextone;$/;"	m	struct:Elem_
+node	node.h	/^struct node$/;"	s
+num_p	type.h	/^	int num_p;$/;"	m	struct:Function_
+pointer	type.h	/^	Type pointer;$/;"	m	struct:Elem_
+pre	type.h	/^	Headline pre;$/;"	m	struct:Headline_
+rneighbor	node.h	/^	struct node *rneighbor;$/;"	m	struct:node	typeref:struct:node::node
+size	type.h	/^		struct {Type elem;int size;}array;$/;"	m	struct:Type_::__anon2::__anon3
+structure	type.h	/^		FieldList structure;\/\/represent the struct by listarray$/;"	m	union:Type_::__anon2
+table_f	table.c	/^Function table_f[16384];$/;"	v
+table_v	table.c	/^Elem table_v[16384];$/;"	v
+tail	type.h	/^	FieldList tail; \/\/ point to next field$/;"	m	struct:FieldList_
+thiscol	type.h	/^	Elem thiscol;$/;"	m	struct:Headline_
+token	node.h	/^	int token;$/;"	m	struct:node
+type	node.h	/^	char type[256];$/;"	m	struct:node
+type	type.h	/^	Type type; \/\/ the type of field$/;"	m	struct:FieldList_
+u	type.h	/^	}u;$/;"	m	struct:Type_	typeref:union:Type_::__anon2
+v_table_init	table.c	/^void v_table_init()$/;"	f
